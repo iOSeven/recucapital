@@ -1,0 +1,32 @@
+:root{
+
+    --primary:#2563EB;
+
+    --primary-hover:#1D4ED8;
+
+    --secondary:#0F172A;
+
+    --background:#F5F7FB;
+
+    --surface:#FFFFFF;
+
+    --text:#334155;
+
+    --border:#E2E8F0;
+
+    --success:#22C55E;
+
+    --warning:#F59E0B;
+
+    --danger:#DC2626;
+
+    --radius:12px;
+
+    --shadow:
+
+        0 8px 30px rgba(15,23,42,.08);
+
+    --font-base: 'Inter', sans-serif;
+    --transition: 200ms ease;
+
+}

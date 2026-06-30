@@ -1,0 +1,121 @@
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    background: var(--background);
+}
+
+.hero-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.hero p {
+    font-size: 18px;
+    color: #64748B;
+    margin-top: 10px;
+}
+
+.hero-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.feature-card {
+    background: var(--surface);
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 30px rgba(15,23,42,.05);
+}
+
+.auth-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background);
+}
+
+.auth-card {
+    width: 360px;
+    padding: 30px;
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    box-shadow: 0 10px 40px rgba(0,0,0,.05);
+    text-align: center;
+}
+
+@keyframes floatSoft {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.hero-glow {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(124,10,42,.25), transparent 60%);
+    filter: blur(60px);
+    animation: floatSoft 6s ease-in-out infinite;
+    z-index: 0;
+}
+
+.hero-title {
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: #555;
+    max-width: 600px;
+    margin: auto;
+}
+
+.feature-card {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 24px;
+    border: 1px solid rgba(124,10,42,.08);
+    transition: 200ms ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--accent);
+}
+
+.image-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.08);
+    border: 1px solid rgba(124,10,42,.08);
+}
