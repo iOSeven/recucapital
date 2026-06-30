@@ -119,3 +119,64 @@
     box-shadow: 0 20px 60px rgba(0,0,0,.08);
     border: 1px solid rgba(124,10,42,.08);
 }
+
+/* ======================================================
+   LaraBase UI Kit - Buttons
+====================================================== */
+
+.lb-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition: all .2s ease;
+
+    cursor: pointer;
+
+    border: 1px solid transparent;
+}
+
+.lb-btn-primary {
+
+    background: #7C0A2A;
+
+    color: #fff;
+
+    box-shadow: 0 12px 30px rgba(124,10,42,.18);
+
+}
+
+.lb-btn-primary:hover {
+
+    background: #5E081F;
+
+    transform: translateY(-2px);
+
+    color:#fff;
+}
+
+.lb-btn-outline {
+
+    background: white;
+
+    color: #7C0A2A;
+
+    border:1px solid #C8A24A;
+
+}
+
+.lb-btn-outline:hover{
+
+    background:#C8A24A;
+
+    color:white;
+
+}

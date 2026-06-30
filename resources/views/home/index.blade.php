@@ -23,13 +23,13 @@
 
         <div class="hero-actions">
 
-            <a href="/login" class="btn btn-primary btn-lg">
-                Acceder al sistema
-            </a>
+            <a href="/login" class="lb-btn lb-btn-primary">
+    Acceder al sistema
+</a>
 
-            <a href="#features" class="btn btn-outline-dark btn-lg">
-                Ver funcionalidades
-            </a>
+            <a href="#features" class="lb-btn lb-btn-outline">
+    Ver funcionalidades
+</a>
 
         </div>
 
@@ -55,10 +55,6 @@
         <h3>Reportes financieros</h3>
         <p>Indicadores claros de recuperación y riesgo.</p>
     </div>
-
-    <div class="btn btn-primary">
-    TEST COLOR VIN0
-</div>
 
 </div>
 
