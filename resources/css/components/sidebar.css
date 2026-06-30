@@ -1,0 +1,122 @@
+/* ======================================================
+   APP SIDEBAR (MODERNO + GLASS + FINTECH)
+====================================================== */
+
+/* SIDEBAR BASE */
+.app-sidebar {
+    position: fixed;
+    top: 64px;
+    left: 0;
+
+    width: 260px;
+    height: calc(100vh - 64px);
+
+    transition: var(--transition);
+
+    overflow: hidden;
+
+    z-index: 50;
+}
+
+/* ESTADO COLAPSADO */
+body.sidebar-collapsed .app-sidebar {
+    width: 80px;
+}
+
+/* HEADER */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 12px;
+    margin-bottom: 20px;
+}
+
+.sidebar-header img {
+    width: 30px;
+    height: 30px;
+}
+
+.sidebar-header span {
+    font-weight: 800;
+    color: var(--primary);
+}
+
+/* NAV */
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* ITEM */
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 14px;
+
+    border-radius: 12px;
+
+    text-decoration: none;
+
+    color: var(--text);
+
+    transition: var(--transition);
+
+    font-size: 14px;
+}
+
+/* HOVER */
+.nav-item:hover {
+    background: var(--background);
+    transform: translateX(4px);
+}
+
+/* ACTIVE */
+.nav-item.active {
+    background: rgba(124,10,42,.10);
+    color: var(--primary);
+    border: 1px solid var(--border-primary);
+    font-weight: 600;
+}
+
+/* SIDEBAR COLLAPSED */
+.app-sidebar.collapsed {
+    width: 80px;
+}
+
+/* opcional: ocultar texto */
+.app-sidebar.collapsed .nav-item {
+    justify-content: center;
+    font-size: 0;
+}
+
+.app-sidebar.collapsed .nav-item::before {
+    font-size: 16px;
+}
+
+body.sidebar-collapsed .sidebar-header span,
+body.sidebar-collapsed .nav-item {
+    font-size: 0;
+    opacity: 0;
+    pointer-events: none;
+}
+
+body.sidebar-collapsed .nav-item {
+    justify-content: center;
+}
+
+body.sidebar-collapsed .nav-item::before {
+    font-size: 18px;
+}
+
+.app-sidebar {
+    transition: width .25s ease;
+}
+
+body {
+    transition: padding-left .25s ease;
+}

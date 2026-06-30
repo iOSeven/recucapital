@@ -10,8 +10,9 @@
     ])
 </head>
 
-<body>
+<body class="sidebar-collapsed">
 
+    @include('layouts.sidebar')
     @include('partials.navbar')
 
     <main>

@@ -3,6 +3,13 @@ body {
     color: var(--text);
     font-family: var(--font-base);
     transition: var(--transition);
+    padding-left: 260px;
+    transition: var(--transition);
+}
+
+/* estado colapsado */
+body.sidebar-collapsed {
+    padding-left: 80px;
 }
 
 .card {

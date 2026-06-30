@@ -1,0 +1,199 @@
+/* ======================================================
+   APP NAVBAR (SAAS STYLE)
+====================================================== */
+
+.app-navbar {
+    height: 64px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 50;
+
+    background: rgba(255,255,255,.75);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+/* LEFT SIDE */
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* TOGGLE */
+.navbar-toggle {
+    width: 38px;
+    height: 38px;
+
+    border-radius: 10px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    font-size: 18px;
+}
+
+.navbar-toggle:hover {
+    background: var(--background);
+    border-color: var(--border-primary);
+}
+
+/* LOGO */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-logo img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.navbar-logo span {
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
+}
+
+/* RIGHT SIDE */
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+/* USER */
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 6px 12px;
+
+    border-radius: 12px;
+
+    border: 1px solid var(--border);
+
+    background: var(--surface);
+
+    transition: var(--transition);
+}
+
+.navbar-user:hover {
+    border-color: var(--border-primary);
+    transform: translateY(-1px);
+}
+
+/* AVATAR */
+.user-avatar {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: var(--text-inverse);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 700;
+}
+
+/* USER INFO */
+.user-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.user-info small {
+    font-size: 11px;
+    color: var(--text-light);
+}
+
+.navbar-toggle {
+    transition: var(--transition);
+}
+
+.navbar-toggle:active {
+    transform: scale(0.95);
+}
+
+.navbar-logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.navbar-logo img {
+    transition: var(--transition);
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.05);
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    text-decoration: none;
+}
+
+.navbar-logo img {
+    height: 34px;   /* 👈 CLAVE: controla tamaño real */
+    width: auto;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.navbar-logo span {
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--primary);
+    letter-spacing: -0.3px;
+}
+
+.navbar-logo img {
+    height: 38px;
+    transition: var(--transition);
+}
+
+.navbar-logo:hover img {
+    transform: scale(1.05);
+}
