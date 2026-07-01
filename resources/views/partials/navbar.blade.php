@@ -27,18 +27,33 @@
     <div class="navbar-right">
 
         @auth
-        <div class="navbar-user">
 
-            <div class="user-avatar">
-                {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+            <div class="navbar-user">
+
+                <div class="user-avatar">
+                    {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+                </div>
+
+                <div class="user-info">
+                    <span class="user-name">{{ Auth::user()->name }}</span>
+                    <small>{{ Auth::user()->role ?? 'Usuario' }}</small>
+                </div>
+
+                <div class="user-actions">
+
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+
+                        <button type="submit" class="lb-btn-icon" title="Cerrar sesión">
+                            <i class="bi bi-box-arrow-right"></i>
+                        </button>
+
+                    </form>
+
+                </div>
+
             </div>
 
-            <div class="user-info">
-                <span class="user-name">{{ Auth::user()->name }}</span>
-                <small>{{ Auth::user()->role ?? 'Usuario' }}</small>
-            </div>
-
-        </div>
         @endauth
 
         @guest

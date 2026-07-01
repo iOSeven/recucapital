@@ -200,6 +200,21 @@ body {
     transform: translateY(-1px);
 }
 
+.app-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background: #f7f5f6;
+}
+
+.main-wrapper {
+    flex: 1;
+    min-width: 0;
+}
+
+.content {
+    min-height: calc(100vh - 72px);
+}
+
 /* ======================================================
    RESPONSIVE DESIGN
 ====================================================== */
