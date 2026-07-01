@@ -215,6 +215,93 @@ body {
     min-height: calc(100vh - 72px);
 }
 
+.lb-empty{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:80px 20px;
+
+}
+
+.lb-empty i{
+
+    font-size:64px;
+
+    color:#C8A24A;
+
+    margin-bottom:20px;
+
+}
+
+.lb-empty h4{
+
+    margin-bottom:10px;
+
+    color:#1f2937;
+
+}
+
+.lb-empty p{
+
+    max-width:450px;
+
+    color:#64748b;
+
+    margin-bottom:30px;
+
+}
+
+.dashboard-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.dashboard-actions form {
+    margin: 0;
+}
+
+.dashboard-pagination {
+    margin-top: 20px;
+}
+
+.lb-btn i {
+    margin-right: 8px;
+}
+
+.table-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.table-actions form{
+
+    margin:0;
+
+}
+
+.table-actions .lb-btn{
+
+    height:42px;
+
+    padding:0 18px;
+
+}
+
 /* ======================================================
    RESPONSIVE DESIGN
 ====================================================== */
