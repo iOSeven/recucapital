@@ -347,3 +347,59 @@ body {
         transform: translateY(120px);
     }
 }
+
+/* =====================================
+   DataTables LaraBase
+===================================== */
+
+.dataTables_wrapper{
+
+    margin-top:20px;
+
+}
+
+.dataTables_filter input{
+
+    border-radius:12px;
+
+    border:1px solid var(--border);
+
+    padding:8px 14px;
+
+    box-shadow:none;
+
+}
+
+.dataTables_length select{
+
+    border-radius:10px;
+
+}
+
+.dataTables_paginate .paginate_button{
+
+    border-radius:10px !important;
+
+}
+
+.dataTables_paginate .current{
+
+    background:var(--primary) !important;
+
+    color:#fff !important;
+
+    border:none !important;
+
+}
+
+.dataTables_info{
+
+    color:#64748b;
+
+}
+
+table.dataTable tbody tr:hover{
+
+    background:#faf7f8;
+
+}

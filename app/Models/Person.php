@@ -8,15 +8,33 @@ class Person extends Model
 {
     protected $fillable = [
         'company_id',
-        'external_id',
-        'name',
-        'email',
-        'phone',
-        'position',
+        'cliente_unico',
+        'nombre_cte',
+        'genero_cliente',
+        'edad_cliente',
+        'ocupacion',
+        'telefono1',
+        'telefono2',
+        'producto',
+        'dias_atraso',
+        'saldo',
+        'saldo_total',
+        'saldo_atrasado',
+        'saldo_requerido',
+        'nombre_despacho',
+        'gestores',
+        'ultima_gestion',
+        'gestion_desc',
+        'latitud',
+        'longitud',
         'raw_data',
     ];
 
     protected $casts = [
         'raw_data' => 'array',
+        'saldo' => 'decimal:2',
+        'saldo_total' => 'decimal:2',
+        'saldo_atrasado' => 'decimal:2',
+        'saldo_requerido' => 'decimal:2',
     ];
 }

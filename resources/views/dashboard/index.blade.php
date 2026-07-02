@@ -153,33 +153,49 @@
 
             @if(isset($people) && $people->count())
 
-                <table class="lb-table">
+                <table id="peopleTable" class="lb-table table table-hover align-middle">
                     <thead>
                         <tr>
+                            <th>Cliente único</th>
                             <th>Nombre</th>
-                            <th>Crédito</th>
-                            <th>Saldo</th>
-                            <th>Estado</th>
+                            <th>Producto</th>
+                            <th>Teléfono</th>
+                            <th>Días atraso</th>
+                            <th>Saldo total</th>
                             <th>Gestor</th>
+                            <th>Gestión</th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        @foreach($people as $person)
+                        @forelse($people ?? [] as $person)
                             <tr>
-                                <td>{{ $person->name ?? 'Sin nombre' }}</td>
-                                <td>{{ $person->credit ?? 'N/A' }}</td>
-                                <td>{{ $person->amount ?? 'N/A' }}</td>
-                                <td>{{ $person->status ?? 'N/A' }}</td>
-                                <td>{{ $person->manager ?? 'N/A' }}</td>
+                                <td>{{ $person->cliente_unico }}</td>
+                                <td>{{ $person->nombre_cte }}</td>
+                                <td>{{ $person->producto }}</td>
+                                <td>{{ $person->telefono1 }}</td>
+                                <td>{{ $person->dias_atraso }}</td>
+                                <td>${{ number_format($person->saldo_total, 2) }}</td>
+                                <td>{{ $person->gestores }}</td>
+                                <td>{{ $person->gestion_desc }}</td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td colspan="8">
+                                    <div class="lb-empty">
+                                        <i class="bi bi-database-x"></i>
+                                        <h4>Sin datos que mostrar</h4>
+                                        <p>Presiona <strong>Sincronizar</strong> para consultar el microservicio.</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
 
-                <div class="dashboard-pagination">
+                @if(isset($people) && method_exists($people, 'links'))
                     {{ $people->links() }}
-                </div>
+                @endif
 
             @else
 
@@ -192,104 +208,89 @@
                     </p>
                 </div>-->
 
-                <table class="lb-table">
-
+                <table id="peopleTable" class="lb-table table table-hover align-middle">
                     <thead>
                         <tr>
-                            <th>Crédito</th>
-                            <th>Cliente</th>
+                            <th>Cliente único</th>
+                            <th>Nombre</th>
+                            <th>Producto</th>
                             <th>Teléfono</th>
-                            <th>Saldo</th>
-                            <th>Estado</th>
+                            <th>Días atraso</th>
+                            <th>Saldo total</th>
                             <th>Gestor</th>
-                            <th>Último movimiento</th>
+                            <th>Gestión</th>
                         </tr>
                     </thead>
 
                     <tbody>
+                        @forelse($people ?? [] as $person)
+                            <tr>
+                                <td>{{ $person->cliente_unico }}</td>
+                                <td>{{ $person->nombre_cte }}</td>
+                                <td>{{ $person->producto }}</td>
+                                <td>{{ $person->telefono1 }}</td>
+                                <td>{{ $person->dias_atraso }}</td>
+                                <td>${{ number_format($person->saldo_total, 2) }}</td>
+                                <td>{{ $person->gestores }}</td>
+                                <td>{{ $person->gestion_desc }}</td>
+                            </tr>
+                        @empty
+                            <tr>
+                                <td>0001-000045-987654</td>
+                                <td>María López Hernández</td>
+                                <td>Crédito personal</td>
+                                <td>272 123 4567</td>
+                                <td><strong class="text-danger">45</strong></td>
+                                <td>$18,450.00</td>
+                                <td>Juan Pérez</td>
+                                <td><span class="status danger">Sin contacto</span></td>
+                            </tr>
 
-                        <tr>
-                            <td>CR-10024</td>
-                            <td>María López Hernández</td>
-                            <td>272 123 4567</td>
-                            <td>$18,450.00</td>
-                            <td><span class="status danger">Vencido</span></td>
-                            <td>Juan Pérez</td>
-                            <td>Hace 2 horas</td>
-                        </tr>
+                            <tr>
+                                <td>0001-000088-456321</td>
+                                <td>Carlos Méndez Ruiz</td>
+                                <td>Préstamo nómina</td>
+                                <td>272 555 8741</td>
+                                <td><strong>12</strong></td>
+                                <td>$8,200.00</td>
+                                <td>Ana Torres</td>
+                                <td><span class="status gold">Promesa de pago</span></td>
+                            </tr>
 
-                        <tr>
-                            <td>CR-10025</td>
-                            <td>Carlos Méndez Ruiz</td>
-                            <td>272 555 8741</td>
-                            <td>$8,200.00</td>
-                            <td><span class="status gold">Seguimiento</span></td>
-                            <td>Ana Torres</td>
-                            <td>Hace 15 min</td>
-                        </tr>
+                            <tr>
+                                <td>0001-000102-741852</td>
+                                <td>Alejandra Ramírez</td>
+                                <td>Tarjeta crédito</td>
+                                <td>272 441 8899</td>
+                                <td><strong>0</strong></td>
+                                <td>$34,870.00</td>
+                                <td>Luis García</td>
+                                <td><span class="status success">Convenio activo</span></td>
+                            </tr>
 
-                        <tr>
-                            <td>CR-10026</td>
-                            <td>Alejandra Ramírez</td>
-                            <td>272 441 8899</td>
-                            <td>$34,870.00</td>
-                            <td><span class="status success">Convenio</span></td>
-                            <td>Luis García</td>
-                            <td>Hoy</td>
-                        </tr>
+                            <tr>
+                                <td>0001-000145-963258</td>
+                                <td>Fernando Castillo</td>
+                                <td>Crédito automotriz</td>
+                                <td>272 332 1458</td>
+                                <td><strong class="text-danger">78</strong></td>
+                                <td>$126,300.00</td>
+                                <td>Juan Pérez</td>
+                                <td><span class="status danger">Cuenta crítica</span></td>
+                            </tr>
 
-                        <tr>
-                            <td>CR-10027</td>
-                            <td>Fernando Castillo</td>
-                            <td>272 332 1458</td>
-                            <td>$12,300.00</td>
-                            <td><span class="status danger">Vencido</span></td>
-                            <td>Juan Pérez</td>
-                            <td>Ayer</td>
-                        </tr>
-
-                        <tr>
-                            <td>CR-10028</td>
-                            <td>Sofía Martínez</td>
-                            <td>272 554 1022</td>
-                            <td>$5,900.00</td>
-                            <td><span class="status success">Al corriente</span></td>
-                            <td>Ana Torres</td>
-                            <td>Hace 4 días</td>
-                        </tr>
-
-                        <tr>
-                            <td>CR-10029</td>
-                            <td>Jorge Hernández</td>
-                            <td>272 900 1122</td>
-                            <td>$56,400.00</td>
-                            <td><span class="status gold">Negociación</span></td>
-                            <td>Carlos Díaz</td>
-                            <td>Hoy</td>
-                        </tr>
-
-                        <tr>
-                            <td>CR-10030</td>
-                            <td>Patricia Gómez</td>
-                            <td>272 412 7458</td>
-                            <td>$7,850.00</td>
-                            <td><span class="status success">Convenio</span></td>
-                            <td>Luis García</td>
-                            <td>Hace 1 hora</td>
-                        </tr>
-
-                        <tr>
-                            <td>CR-10031</td>
-                            <td>Roberto Flores</td>
-                            <td>272 778 9912</td>
-                            <td>$91,250.00</td>
-                            <td><span class="status danger">Judicial</span></td>
-                            <td>Juan Pérez</td>
-                            <td>Hace 3 días</td>
-                        </tr>
-
+                            <tr>
+                                <td>0001-000201-159753</td>
+                                <td>Sofía Martínez</td>
+                                <td>Crédito grupal</td>
+                                <td>272 554 1022</td>
+                                <td><strong>7</strong></td>
+                                <td>$5,900.00</td>
+                                <td>Ana Torres</td>
+                                <td><span class="status success">Seguimiento</span></td>
+                            </tr>
+                        @endforelse
                     </tbody>
-
                 </table>
 
             @endif
