@@ -183,14 +183,114 @@
 
             @else
 
-                <div class="lb-empty">
+                <!--<div class="lb-empty">
                     <i class="bi bi-database-x"></i>
                     <h4>Sin datos que mostrar</h4>
                     <p>
                         Aún no se ha sincronizado información del despacho.
                         Presiona <strong>Consultar personal</strong> para iniciar el proceso.
                     </p>
-                </div>
+                </div>-->
+
+                <table class="lb-table">
+
+                    <thead>
+                        <tr>
+                            <th>Crédito</th>
+                            <th>Cliente</th>
+                            <th>Teléfono</th>
+                            <th>Saldo</th>
+                            <th>Estado</th>
+                            <th>Gestor</th>
+                            <th>Último movimiento</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>CR-10024</td>
+                            <td>María López Hernández</td>
+                            <td>272 123 4567</td>
+                            <td>$18,450.00</td>
+                            <td><span class="status danger">Vencido</span></td>
+                            <td>Juan Pérez</td>
+                            <td>Hace 2 horas</td>
+                        </tr>
+
+                        <tr>
+                            <td>CR-10025</td>
+                            <td>Carlos Méndez Ruiz</td>
+                            <td>272 555 8741</td>
+                            <td>$8,200.00</td>
+                            <td><span class="status gold">Seguimiento</span></td>
+                            <td>Ana Torres</td>
+                            <td>Hace 15 min</td>
+                        </tr>
+
+                        <tr>
+                            <td>CR-10026</td>
+                            <td>Alejandra Ramírez</td>
+                            <td>272 441 8899</td>
+                            <td>$34,870.00</td>
+                            <td><span class="status success">Convenio</span></td>
+                            <td>Luis García</td>
+                            <td>Hoy</td>
+                        </tr>
+
+                        <tr>
+                            <td>CR-10027</td>
+                            <td>Fernando Castillo</td>
+                            <td>272 332 1458</td>
+                            <td>$12,300.00</td>
+                            <td><span class="status danger">Vencido</span></td>
+                            <td>Juan Pérez</td>
+                            <td>Ayer</td>
+                        </tr>
+
+                        <tr>
+                            <td>CR-10028</td>
+                            <td>Sofía Martínez</td>
+                            <td>272 554 1022</td>
+                            <td>$5,900.00</td>
+                            <td><span class="status success">Al corriente</span></td>
+                            <td>Ana Torres</td>
+                            <td>Hace 4 días</td>
+                        </tr>
+
+                        <tr>
+                            <td>CR-10029</td>
+                            <td>Jorge Hernández</td>
+                            <td>272 900 1122</td>
+                            <td>$56,400.00</td>
+                            <td><span class="status gold">Negociación</span></td>
+                            <td>Carlos Díaz</td>
+                            <td>Hoy</td>
+                        </tr>
+
+                        <tr>
+                            <td>CR-10030</td>
+                            <td>Patricia Gómez</td>
+                            <td>272 412 7458</td>
+                            <td>$7,850.00</td>
+                            <td><span class="status success">Convenio</span></td>
+                            <td>Luis García</td>
+                            <td>Hace 1 hora</td>
+                        </tr>
+
+                        <tr>
+                            <td>CR-10031</td>
+                            <td>Roberto Flores</td>
+                            <td>272 778 9912</td>
+                            <td>$91,250.00</td>
+                            <td><span class="status danger">Judicial</span></td>
+                            <td>Juan Pérez</td>
+                            <td>Hace 3 días</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
 
             @endif
 
