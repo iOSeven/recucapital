@@ -2,30 +2,24 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>LaraBase</title>
+    <title>Recucapital</title>
 
-    @vite(['resources/js/app.js'])
+    @vite([
+        'resources/css/app.css',
+        'resources/js/app.js'
+    ])
 </head>
 
-<body>
+<body class="sidebar-collapsed">
 
-<div class="app-wrapper">
+    @include('layouts.sidebar')
+    @include('partials.navbar')
 
-    @include('partials.sidebar')
+    <main>
+        @yield('content')
+    </main>
 
-    <div class="main-wrapper">
-
-        @include('partials.navbar')
-
-        <main class="content">
-            @yield('content')
-        </main>
-
-        @include('partials.footer')
-
-    </div>
-
-</div>
+    @include('partials.footer')
 
 </body>
 </html>

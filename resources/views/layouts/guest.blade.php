@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>LaraBase</title>
+    <title>Recucapital</title>
 
     @vite([
         'resources/css/app.css',
