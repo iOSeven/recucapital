@@ -2,6 +2,18 @@
 
 @section('content')
 
+@if(session('success'))
+    <div class="lb-alert success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if(session('warning'))
+    <div class="lb-alert warning">
+        {{ session('warning') }}
+    </div>
+@endif
+
 <div class="dashboard-page">
 
     <div class="dashboard-header">
@@ -127,14 +139,13 @@
 
             <div class="table-actions">
 
-                <form method="POST" action="#">
+                <form method="POST" action="{{ route('personnel.sync') }}" class="sync-form">
                     @csrf
 
-                    <button type="submit" class="lb-btn lb-btn-primary">
+                    <button type="submit" class="lb-btn lb-btn-primary sync-button">
                         <i class="bi bi-arrow-repeat"></i>
                         Sincronizar
                     </button>
-
                 </form>
 
                 <a href="#" class="lb-btn lb-btn-outline">

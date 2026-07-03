@@ -28,6 +28,9 @@ class Person extends Model
         'latitud',
         'longitud',
         'raw_data',
+        'personnel_sync_id',
+        'is_legacy',
+        'legacy_at',
     ];
 
     protected $casts = [
@@ -36,5 +39,7 @@ class Person extends Model
         'saldo_total' => 'decimal:2',
         'saldo_atrasado' => 'decimal:2',
         'saldo_requerido' => 'decimal:2',
+        'is_legacy' => 'boolean',
+        'legacy_at' => 'datetime',
     ];
 }

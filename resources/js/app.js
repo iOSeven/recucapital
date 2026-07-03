@@ -28,3 +28,22 @@ $(document).ready(function () {
     });
 
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.sync-form');
+
+    if (!form) return;
+
+    form.addEventListener('submit', () => {
+        const button = form.querySelector('.sync-button');
+
+        if (!button) return;
+
+        button.disabled = true;
+        button.innerHTML = `
+            <i class="bi bi-arrow-repeat"></i>
+            Sincronizando...
+        `;
+    });
+});

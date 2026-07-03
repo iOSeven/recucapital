@@ -403,3 +403,22 @@ table.dataTable tbody tr:hover{
     background:#faf7f8;
 
 }
+
+.lb-alert {
+    padding: 14px 18px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.lb-alert.success {
+    background: rgba(22, 163, 74, .10);
+    color: #15803d;
+    border: 1px solid rgba(22, 163, 74, .18);
+}
+
+.lb-alert.warning {
+    background: rgba(200, 162, 74, .14);
+    color: #8a6714;
+    border: 1px solid rgba(200, 162, 74, .24);
+}

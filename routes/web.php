@@ -23,12 +23,14 @@ Route::middleware('auth')->group(function () {
     // Personnel routes
     Route::get('/dashboard/company/{company}', [PersonnelController::class, 'index'])
         ->name('personnel.index');
-
-    Route::post('/dashboard/company/{company}/sync', [PersonnelController::class, 'sync'])
-        ->name('personnel.sync');
-
+    //Route::post('/dashboard/company/{company}/sync', [PersonnelController::class, 'sync'])
+      //  ->name('personnel.sync');
     Route::get('/dashboard/company/{company}/export', [PersonnelController::class, 'export'])
         ->name('personnel.export');
+
+    //Provicional
+    Route::post('/dashboard/personnel/sync', [PersonnelController::class, 'sync'])
+    ->name('personnel.sync');
 });
 
 require __DIR__.'/auth.php';
